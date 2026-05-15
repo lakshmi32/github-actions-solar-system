@@ -11,7 +11,7 @@ env:
   MONGO_USERNAME: superuser
   MONGO_PASSWORD: ${{ secrets.MONGO_PASSWORD }}
     
-  
+
 jobs:
   unit-testing:
         name: unit-testing
@@ -108,7 +108,7 @@ jobs:
         - name: Docker Login
           uses: docker/login-action@v2
           with:
-           username: ${{ vars.DOCKERHUB_USERNAME }}
+           username: superuser
            password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
         - name: GHCR Login
