@@ -161,12 +161,9 @@ jobs:
          name: development
         runs-on: ubuntu-latest
         steps:
-         - name: Checkout repository
-           uses: actions/checkout@v3
-
-         - name: Install Kubectl CLI
+          - name: Install Kubectl CLI
            uses: helm/kind-action@v1
-         -  run: |
+          - run: |
              sleep 60
              kubectl -n kube-system get pod
              set +e
@@ -179,7 +176,7 @@ jobs:
               echo "kubectl returned $?"
               kubectl -n default get pod
               sleep 10
-              
+
            
 
          
